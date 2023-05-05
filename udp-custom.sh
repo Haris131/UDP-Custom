@@ -1,9 +1,11 @@
 #!/bin/bash
 
 cd
+rm -rf /root/udp
 mkdir -p /root/udp
 
 # change to time GMT+7
+echo "change to time GMT+7"
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 # install udp-custom
@@ -18,7 +20,7 @@ chmod 644 /root/udp/config.json
 if [ -z "$1" ]; then
 cat <<EOF > /etc/systemd/system/udp-custom.service
 [Unit]
-Description=udp-custom by ePro Dev. Team
+Description=UDP Custom by ePro Dev. Team
 
 [Service]
 User=root
@@ -34,7 +36,7 @@ EOF
 else
 cat <<EOF > /etc/systemd/system/udp-custom.service
 [Unit]
-Description=udp-custom by ePro Dev. Team
+Description=UDP Custom by ePro Dev. Team
 
 [Service]
 User=root
